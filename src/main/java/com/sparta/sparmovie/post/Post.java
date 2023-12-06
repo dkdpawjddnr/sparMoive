@@ -1,4 +1,4 @@
-package com.sparta.sparmovie.todo;
+package com.sparta.sparmovie.post;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Todo implements Serializable {
+public class Post implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -44,16 +44,16 @@ public class Todo implements Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	@OneToMany(mappedBy = "todo")
+	@OneToMany(mappedBy = "post")
 	private List<Comment> comments;
 
 	@Builder
-	public Todo(String title, String content) {
+	public Post(String title, String content) {
 		this.title = title;
 		this.content = content;
 	}
 
-	public Todo(TodoRequestDTO dto) {
+	public Post(PostRequestDTO dto) {
 		this.title = dto.getTitle();
 		this.content = dto.getContent();
 		this.createDate = LocalDateTime.now();

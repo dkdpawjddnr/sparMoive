@@ -6,7 +6,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @ActiveProfiles("test")
 @SpringBootTest
-class TodoPartyApplicationTests {
+class SparMoiveApplicationTests {
 
 	@Test
 	void contextLoads() {

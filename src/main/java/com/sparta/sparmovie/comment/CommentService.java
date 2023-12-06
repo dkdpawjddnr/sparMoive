@@ -2,8 +2,8 @@ package com.sparta.sparmovie.comment;
 
 import java.util.concurrent.RejectedExecutionException;
 
-import com.sparta.sparmovie.todo.Todo;
-import com.sparta.sparmovie.todo.TodoService;
+import com.sparta.sparmovie.post.Post;
+import com.sparta.sparmovie.post.PostService;
 import com.sparta.sparmovie.user.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,14 +14,14 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CommentService {
 	private final CommentRepository commentRepository;
-	private final TodoService todoService;
+	private final PostService postService;
 
 	public CommentResponseDTO createComment(CommentRequestDTO dto, User user) {
-		Todo todo = todoService.getTodo(dto.getTodoId());
+		Post post = postService.getPost(dto.getPostId());
 
 		Comment comment = new Comment(dto);
 		comment.setUser(user);
-		comment.setTodo(todo);
+		comment.setPost(post);
 
 		commentRepository.save(comment);
 

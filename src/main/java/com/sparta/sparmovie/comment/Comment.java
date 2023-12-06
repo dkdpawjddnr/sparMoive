@@ -2,7 +2,7 @@ package com.sparta.sparmovie.comment;
 
 import java.time.LocalDateTime;
 
-import com.sparta.sparmovie.todo.Todo;
+import com.sparta.sparmovie.post.Post;
 import com.sparta.sparmovie.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,8 +30,8 @@ public class Comment {
 	private User user;
 
 	@ManyToOne
-	@JoinColumn(name = "todo_id")
-	private Todo todo;
+	@JoinColumn(name = "post_id")
+	private Post post;
 
 	@Column
 	private LocalDateTime createDate;
@@ -46,9 +46,9 @@ public class Comment {
 		this.user = user;
 	}
 
-	public void setTodo(Todo todo) {
-		this.todo = todo;
-		todo.getComments().add(this);
+	public void setPost(Post post) {
+		this.post = post;
+		post.getComments().add(this);
 	}
 
 	// 서비스 메서드

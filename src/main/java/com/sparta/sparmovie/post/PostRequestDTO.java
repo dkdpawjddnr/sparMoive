@@ -1,4 +1,4 @@
-package com.sparta.sparmovie.todo;
+package com.sparta.sparmovie.post;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Builder
 @EqualsAndHashCode
-public class TodoRequestDTO {
+public class PostRequestDTO {
 	private String title;
 	private String content;
 }

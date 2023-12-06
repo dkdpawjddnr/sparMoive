@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TodoPartyApplication {
+public class SparMoiveApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TodoPartyApplication.class, args);
+		SpringApplication.run(SparMoiveApplication.class, args);
 	}
 
 }

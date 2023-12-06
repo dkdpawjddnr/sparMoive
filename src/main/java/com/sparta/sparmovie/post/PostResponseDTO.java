@@ -1,4 +1,4 @@
-package com.sparta.sparmovie.todo;
+package com.sparta.sparmovie.post;
 
 import java.time.LocalDateTime;
 
@@ -15,7 +15,7 @@ import lombok.Setter;
 @Builder
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
-public class TodoResponseDTO extends CommonResponseDTO {
+public class PostResponseDTO extends CommonResponseDTO {
 	private Long id;
 	private String title;
 	private String content;
@@ -23,16 +23,16 @@ public class TodoResponseDTO extends CommonResponseDTO {
 	private UserDTO user;
 	private LocalDateTime createDate;
 
-	public TodoResponseDTO(String msg, Integer statusCode) {
+	public PostResponseDTO(String msg, Integer statusCode) {
 		super(msg, statusCode);
 	}
 
-	public TodoResponseDTO(Todo todo) {
-		this.id = todo.getId();
-		this.title = todo.getTitle();
-		this.content = todo.getContent();
-		this.isCompleted = todo.getIsCompleted();
-		this.user = new UserDTO(todo.getUser());
-		this.createDate = todo.getCreateDate();
+	public PostResponseDTO(Post post) {
+		this.id = post.getId();
+		this.title = post.getTitle();
+		this.content = post.getContent();
+		this.isCompleted = post.getIsCompleted();
+		this.user = new UserDTO(post.getUser());
+		this.createDate = post.getCreateDate();
 	}
 }

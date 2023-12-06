@@ -1,4 +1,4 @@
-package com.sparta.sparmovie.todo;
+package com.sparta.sparmovie.post;
 
 import java.util.List;
 
@@ -10,12 +10,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class TodoListResponseDTO {
+public class PostListResponseDTO {
 	private UserDTO user;
-	private List<TodoResponseDTO> todoList;
+	private List<PostResponseDTO> postList;
 
-	public TodoListResponseDTO(UserDTO user, List<TodoResponseDTO> todoList) {
+	public PostListResponseDTO(UserDTO user, List<PostResponseDTO> postList) {
 		this.user = user;
-		this.todoList = todoList;
+		this.postList = postList;
 	}
 }
