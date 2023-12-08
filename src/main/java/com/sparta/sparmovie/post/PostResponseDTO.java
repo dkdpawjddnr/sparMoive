@@ -19,7 +19,6 @@ public class PostResponseDTO extends CommonResponseDTO {
 	private Long id;
 	private String title;
 	private String content;
-	private Boolean isCompleted;
 	private UserDTO user;
 	private LocalDateTime createDate;
 
@@ -31,7 +30,6 @@ public class PostResponseDTO extends CommonResponseDTO {
 		this.id = post.getId();
 		this.title = post.getTitle();
 		this.content = post.getContent();
-		this.isCompleted = post.getIsCompleted();
 		this.user = new UserDTO(post.getUser());
 		this.createDate = post.getCreateDate();
 	}

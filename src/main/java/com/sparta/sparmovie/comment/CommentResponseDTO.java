@@ -4,11 +4,13 @@ import java.time.LocalDateTime;
 
 import com.sparta.sparmovie.CommonResponseDTO;
 import com.sparta.sparmovie.user.UserDTO;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
+@Builder
 public class CommentResponseDTO extends CommonResponseDTO {
 	private Long id;
 	private String text;

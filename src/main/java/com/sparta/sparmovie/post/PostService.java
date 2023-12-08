@@ -42,10 +42,10 @@ public class PostService {
 			var userDto = new UserDTO(post.getUser());
 			var postDto = new PostResponseDTO(post);
 			if (userPostMap.containsKey(userDto)) {
-				// 유저 할일목록에 항목을 추가
+				// 게시글 작성
 				userPostMap.get(userDto).add(postDto);
 			} else {
-				// 유저 할일목록을 새로 추가
+				// 게시글 목록 생성
 				userPostMap.put(userDto, new ArrayList<>(List.of(postDto)));
 			}
 		});
@@ -67,7 +67,7 @@ public class PostService {
 	public Post getPost(Long postId) {
 
 		return postRepository.findById(postId)
-			.orElseThrow(() -> new IllegalArgumentException("존재하지 않는 할일 ID 입니다."));
+			.orElseThrow(() -> new IllegalArgumentException("존재하지 않는 게시글입니다."));
 	}
 
 	public Post getUserPost(Long postId, User user) {
