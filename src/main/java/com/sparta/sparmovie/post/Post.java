@@ -48,9 +48,10 @@ public class Post implements Serializable {
 	private List<Comment> comments;
 
 	@Builder
-	public Post(String title, String content) {
+	public Post(String title, String content, List<Comment> comments) {
 		this.title = title;
 		this.content = content;
+		this.comments = comments;
 	}
 
 	public Post(PostRequestDTO dto) {
@@ -59,6 +60,7 @@ public class Post implements Serializable {
 		this.createDate = LocalDateTime.now();
 		this.isCompleted = false;
 	}
+
 
 	// 연관관계 메서드
 	public void setUser(User user) {
