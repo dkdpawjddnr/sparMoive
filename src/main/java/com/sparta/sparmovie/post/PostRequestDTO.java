@@ -17,4 +17,5 @@ public class PostRequestDTO {
 		this.title = title;
 		this.content = content;
 	}
+
 }

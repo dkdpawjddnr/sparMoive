@@ -11,7 +11,9 @@ import jakarta.persistence.Table;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Setter
 @Getter
 @Entity
 @NoArgsConstructor
@@ -26,6 +28,9 @@ public class User implements Serializable {
 
 	@Column(nullable = false)
 	private String password;
+
+
+	// email 추가
 
 	@Builder
 	public User(String username, String password) {
