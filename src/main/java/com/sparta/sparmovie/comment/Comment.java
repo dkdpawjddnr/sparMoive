@@ -11,13 +11,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
 @Getter
 @Entity
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Comment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,9 +39,13 @@ public class Comment {
 	@Column
 	private LocalDateTime createDate;
 
-	public Comment(CommentRequestDTO dto) {
-		this.text = dto.getText();
-		this.createDate = LocalDateTime.now();
+	// 기본 생성자를 롬복의 @Builder로 대체
+	@Builder
+	public Comment(String text, User user, Post post, LocalDateTime createDate) {
+		this.text = text;
+		this.user = user;
+		this.post = post;
+		this.createDate = createDate;
 	}
 
 	// 연관관계 편의 메서드
